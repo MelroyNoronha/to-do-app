@@ -23,15 +23,12 @@ function fetchTasks(){
   for(var i=0; i < allTasks.length; i++){
     var task = allTasks[i];
 
-    taskList.innerHTML += '<div class="collection-item">'+
-                          '<br>'+
-                          '<div class="col s6">'+
+    taskList.innerHTML += '<br>'+
+                          '<div class="col s10 white-text leftBorder" id="taskItem">'+
                           task +
+                          '<button class="btn right hoverable teal darken-4" onclick="deleteTask(\''+task+'\')">Done</button>'+
                           '</div>'+
-                          '<button class="btn col s3" onclick="strike()">Done</button>'+
-                          '<button class="btn col s3 red" onclick="deleteTask(\''+task+'\')">Delete</button>'+
-                          '</div>'+
-                          '<br>'; 
+                          '<br>';
   }
 
 }
