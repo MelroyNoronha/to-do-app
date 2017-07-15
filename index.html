@@ -6,19 +6,23 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>to do</title>
   <link rel="stylesheet" href="materialize\css\materialize.min.css">
-  <style>#input-box{font-size: 2.5rem}</style>
+  <style>
+    #inputBox{font-size: 2rem}
+    #taskList{font-size: 2rem}
+  </style>
 </head>
-<body class="teal darken-1">
+<body class="white" onload="fetchTasks()">
   <div  class="container">
     <br>
     <br>
     <br>
     <br>
     <form class="row section" id="myForm">
-      <input type="text" placeholder="your task here" class="col s12 white-text" id="input-box">
-      <button class="col s6 offset-s3 waves-effect waves-light btn" id="submit-button">Add task</button>
+      <input type="text" placeholder="new task..." class="col s8 black-text" id="inputBox" required>
+      <button class="col s2 offset-s1 waves-effect waves-light btn" id="submit-button"><i>+</i></button>
     </form>
-  
+    <div class="row section" id="taskList">
+    </div>
   </div>
  
   <script src="main.js"></script>
