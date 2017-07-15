@@ -28,14 +28,24 @@ function fetchTasks(){
                           '<div class="col s6">'+
                           task +
                           '</div>'+
-                          '<button class="btn col s3" onclick="strike(task)">Done</button>'+
-                          '<button class="btn col s3 red" onclick="deleteTask(task)">Delete</button>'+
+                          '<button class="btn col s3" onclick="strike()">Done</button>'+
+                          '<button class="btn col s3 red" onclick="deleteTask(\''+task+'\')">Delete</button>'+
                           '</div>'+
                           '<br>'; 
   }
 
 }
 
-function deleteTask(){
+function deleteTask(task){
+  var allTasks = JSON.parse(localStorage.getItem('allTasks'));
   
+  for(i = 0; i < allTasks.length; i++){
+    if(task == allTasks[i]){
+      allTasks.splice(i,1);
+    }
+  }
+  
+  localStorage.setItem('allTasks' , JSON.stringify(allTasks));
+
+  fetchTasks();
 }
